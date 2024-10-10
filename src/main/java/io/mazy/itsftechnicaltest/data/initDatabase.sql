@@ -31,12 +31,13 @@ CREATE TABLE Employee_Service
     FOREIGN KEY (service_id) REFERENCES Service (id)
 );
 
-CREATE TABLE FamilyMember (
-                              id SERIAL PRIMARY KEY,
-                              employee_id INT NOT NULL,
-                              first_name VARCHAR(100) NOT NULL,
-                              last_name VARCHAR(100) NOT NULL,
-                              date_of_birth DATE NOT NULL,
-                              FOREIGN KEY (employee_id) REFERENCES Employee(id)
+CREATE TABLE FamilyMember
+(
+    id            SERIAL PRIMARY KEY,
+    employee_id   INT          NOT NULL,
+    first_name    VARCHAR(100) NOT NULL,
+    last_name     VARCHAR(100) NOT NULL,
+    date_of_birth DATE         NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES Employee (id)
 );
 
